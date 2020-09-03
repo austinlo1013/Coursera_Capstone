@@ -1,2 +1,3 @@
 # The data that I will analyse will the the car accident reports from the location, with aspects of each car accidents including their location of accident, time of accident, car capacity, as well as number of casualties.
 # With the above attributes, I wish to identify the black spots of places where car accidents frequently occurs, and the background settings behind each serious car accidents.
+# Attributes to be used will include "ROADCON", "SPEEDING",  "LIGHTCON", " WEATHER", and "SEVERITYDESC"
