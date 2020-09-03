@@ -3,3 +3,5 @@
 # In this capstone, we try to use data anlytics to identify trends and occurances of car accidents, using data to realse the locations and similarities
 #     /common background settings behind every car accidents (serve or mild ones).
 # With this we hope to reduce the number of cases of car accidents and the severity and casualties that it may cause.
+# There are several unique keys in the dataset, include " 'OBJECT ID", 'INCKEY','COLDETKEY"
+# With the above uniques keys, we can identify each accidents with their keys.
