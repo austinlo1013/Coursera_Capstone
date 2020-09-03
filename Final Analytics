@@ -1,0 +1,51 @@
+import numpy as np  # useful for many scientific computing in Python
+import pandas as pd # primary data structure library
+
+# define the world map
+world_map = folium.Map()
+
+# display world map
+world_map
+
+# use the inline backend to generate the plots within the browser
+%matplotlib inline 
+
+import matplotlib as mpl
+import matplotlib.pyplot as plt
+
+mpl.style.use('ggplot') # optional: for ggplot-like style
+
+# check for latest version of Matplotlib
+print ('Matplotlib version: ', mpl.__version__) # >= 2.0.0
+
+
+# 'bin_edges' is a list of bin intervals
+count, bin_edges = np.histogram(df_can['2013'])
+
+df_can['2013'].plot(kind='hist', figsize=(8, 5), xticks=bin_edges)
+
+plt.title('Histogram of Car Accidnets from 195 countries in 2013') # add a title to the histogram
+plt.ylabel('Number of Location') # add y-label
+plt.xlabel('Number of Accidents') # add x-label
+
+plt.show()
+
+
+
+
+
+# clean up the dataset to remove unnecessary columns (eg. REG) 
+df_can.drop(['AREA','REG','DEV','Type','Coverage'], axis=1, inplace=True)
+
+# let's rename the columns so that they make sense
+df_can.rename(columns={'OdName':'Location', 'AreaName':'Continent','RegName':'Coordinates'}, inplace=True)
+
+# for sake of consistency, let's also make all column labels of type string
+df_can.columns = list(map(str, df_can.columns))
+
+# add total column
+df_can['Total'] = df_can.sum(axis=1)
+
+# years that we will be using in this lesson - useful for plotting later on
+years = list(map(str, range(1980, 2014)))
+print ('data dimensions:', df_can.shape)
